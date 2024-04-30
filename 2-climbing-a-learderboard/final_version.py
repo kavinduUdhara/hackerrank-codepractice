@@ -13,6 +13,7 @@ def climbingLeaderboard(ranked, player):
     
     print(rank_arr)
     print(rank_dict)
+    #binary search
     for play in player:
         if play in rank_dict:
             result.append(rank_dict[play])
@@ -22,7 +23,6 @@ def climbingLeaderboard(ranked, player):
         arr_len = len(rank_arr) - 1
         while (s != e):
             m = (s + e) // 2
-            print(f"s {s} | e {e} | m {m}| m+1 {m+1} | play {play}")
             if play > rank_arr[m + 1] and play < rank_arr[m]:
                 result.append(rank_dict[rank_arr[m]] + 1)
                 break
@@ -35,7 +35,6 @@ def climbingLeaderboard(ranked, player):
                     result.append(arr_len + 2)
                 elif s == 0:
                     result.append(1)
-                print(f"s: {s} | e: {e}")
-    print(result)
+    return(result)
 
 climbingLeaderboard([100,100,50,40,40,20,10],[5,25,50,120])
